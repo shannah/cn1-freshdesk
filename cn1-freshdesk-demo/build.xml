@@ -450,9 +450,17 @@
             <fileset dir="native"/>
         </copy>
         <ant inheritall="false" antfile="dist/cn1-freshdesk-lib/build.xml" target="jar" />
+        <ant inheritall="false" antfile="dist/cn1-freshdesk-lib/build.xml" target="javadoc"/>
         <copy file="dist/cn1-freshdesk-lib/dist/cn1-freshdesk-lib-template2.cn1lib" tofile="dist/cn1-freshdesk.cn1lib"/>
+        <delete dir="../javadoc"/>
+        <copy todir="../javadoc">
+            <fileset dir="dist/cn1-freshdesk-lib/dist/javadoc"/>
+        </copy>
         <delete dir="dist/cn1-freshdesk-lib"/>
+        
     </target>
+    
+    
 
     <target name="-post-clean" depends="refresh-libs">
     </target>
