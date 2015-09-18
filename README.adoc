@@ -1,0 +1,43 @@
+= Codename One Freshdesk SDK
+
+Codename One support for http://freshdesk.com/[Freshdesk].
+
+This library wraps the native http://developer.freshdesk.com/mobihelp/ios/integration_guide[iOS] and http://developer.freshdesk.com/mobihelp/android/integration_guide/#integrate-support[Android] SDKs to provide a single cross-platform Java API that can be used in a Codename One project.
+
+
+== Installation
+
+. Download cn1-freshdesk.cn1lib and copy it into your project's `lib` directory.
+. Select "Refresh Libs" in your project.
+
+== Initialization
+
+[source,java]
+-----
+import com.codename1.freshdesk.Mobihelp;
+
+...
+
+
+ if (Mobihelp.isSupported()) {
+    // Initialize iOS.
+    MobihelpConfig config = new MobihelpConfig();
+    config.setAppSecret("3536335f585d53e285a572304c1a781ca690750b");
+    config.setAppId("freshdeskdemo-2-32960149eb708717db9fb8db9fcdaeb3");
+    config.setDomain("codenameonetest1.freshdesk.com");
+    Mobihelp.initIOS(config);
+    
+   
+    // Initialize Android
+    config = new MobihelpConfig();
+    config.setAppSecret("328f6ee77c646cef2eccb6ce4c1aa49b62fddc88");
+    config.setAppId("freshdeskdemo-1-966a571049d063582333478fc40355b0");
+    config.setDomain("https://codenameonetest1.freshdesk.com");
+    Mobihelp.initAndroid(config);
+    
+}
+-----
+
+== API Usage
+
+The API follows the Freshdesk Android API 
