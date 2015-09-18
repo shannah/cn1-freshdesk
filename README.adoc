@@ -4,10 +4,37 @@ Codename One support for http://freshdesk.com/[Freshdesk].
 
 This library wraps the native http://developer.freshdesk.com/mobihelp/ios/integration_guide[iOS] and http://developer.freshdesk.com/mobihelp/android/integration_guide/#integrate-support[Android] SDKs to provide a single cross-platform Java API that can be used in a Codename One project.
 
+== License
+
+[source,java]
+----
+/*
+ * Copyright (c) 2012, Codename One and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Codename One designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *  
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ * 
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ * 
+ * Please contact Codename One through http://www.codenameone.com/ if you 
+ * need additional information or have any questions.
+ */
+----
 
 == Installation
 
-. Download cn1-freshdesk.cn1lib and copy it into your project's `lib` directory.
+. Download https://github.com/shannah/cn1-freshdesk/releases[cn1-freshdesk.cn1lib] and copy it into your project's `lib` directory.
 . Select "Refresh Libs" in your project.
 
 == Initialization
@@ -40,4 +67,19 @@ import com.codename1.freshdesk.Mobihelp;
 
 == API Usage
 
-The API follows the Freshdesk Android API 
+The API follows the Freshdesk Android API.  
+
+. http://shannah.github.io/cn1-freshdesk/javadoc/[View Javadocs]
+. https://github.com/shannah/cn1-freshdesk/blob/master/cn1-freshdesk-demo/src/com/codename1/freshdesk/FreshDeskDemo.java[View Demo]
+
+== Building From Source
+
+----
+$ git clone https://github.com/shannah/cn1-freshdesk.git
+$ cd cn1-fresh-desk/cn1-freshdesk-demo
+$ ant jar
+----
+
+This you'll find the `cn1-freshdesk.cn1lib` inside the `dist` directory.
+
+
