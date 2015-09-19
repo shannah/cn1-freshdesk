@@ -53,43 +53,43 @@ public class Mobihelp {
     }
     
     //Attach the given custom data (key-value pair) to the conversations/tickets.   
-    final static void	addCustomData(String key, String value) {
+    public final static void	addCustomData(String key, String value) {
         peer.addCustomData(key, value);
     }
     //Attach the given custom data (key-value pair) to the conversations/tickets with the ability to flag sensitive data.
-    final static void	addCustomData(String key, String value, boolean isSensitive) {
+    public final static void	addCustomData(String key, String value, boolean isSensitive) {
         peer.addCustomDataWithSensitivity(key, value, isSensitive);
     }
     //Clear all breadcrumb data.
-    final static void	clearBreadCrumbs() {
+    public final static void	clearBreadCrumbs() {
         peer.clearBreadCrumbs();
     }
     //Clear all custom data.
-    final static void	clearCustomData() {
+    public final static void	clearCustomData() {
         peer.clearCustomData();
     }
     //Clears User information.
-    final static void	clearUserData() {
+    public final static void	clearUserData() {
         peer.clearUserData();
     }
     //Retrieve the number of unread items across all the conversations for the user synchronously i.e.
-    final static int	getUnreadCount() {
+    public final static int	getUnreadCount() {
         return peer.getUnreadCount();
     }
 
     //Retrieve the number of unread items across all the conversations for the user asynchronously, count is delivered to the supplied UnreadUpdatesCallback instance Note : This may return 0 or stale value when there is no network connectivity etc
-    final static void	getUnreadCountAsync(UnreadUpdatesCallback callback) {
+    public final static void	getUnreadCountAsync(UnreadUpdatesCallback callback) {
         int callbackId = MobihelpNativeCallback.registerUnreadUpdatesCallback(callback);
         peer.getUnreadCountAsync(callbackId);
     }
     //Initialize the Mobihelp support section with necessary app configuration.
-    final static void	initAndroid(MobihelpConfig config) {
+    public final static void	initAndroid(MobihelpConfig config) {
         if ("and".equals(Display.getInstance().getPlatformName())) {
             init(config);
         }
     }
     
-    final static void initIOS(MobihelpConfig config) {
+    public final static void initIOS(MobihelpConfig config) {
         if ("ios".equals(Display.getInstance().getPlatformName())) {
             init(config);
         }
@@ -112,37 +112,37 @@ public class Mobihelp {
     }
     
     //Attaches the given text as a breadcrumb to the conversations/tickets.
-    final static void	leaveBreadCrumb(String crumbText) {
+    public final static void	leaveBreadCrumb(String crumbText) {
         peer.leaveBreadCrumb(crumbText);
     }
     //Set the email of the user to be reported on the Freshdesk Portal
-    final static void	setUserEmail(String email) {
+    public final static void	setUserEmail(String email) {
         peer.setUserEmail(email);
     }
 
     //Set the name of the user to be reported on the Freshdesk Portal.
-    final static void	setUserFullName(String name) {
+    public final static void	setUserFullName(String name) {
         peer.setUserFullName(name);
     }
 
     //Display the App Rating dialog with option to Rate, Leave feedback etc
-    static void	showAppRateDialog() {
+    public static void	showAppRateDialog() {
         peer.showAppRateDialog();
     }
     //Directly launch Conversation list screen from anywhere within the application
-    final static void	showConversations() {
+    public final static void	showConversations() {
         peer.showConversations();
     }
     //Directly launch Feedback Screen from anywhere within the application.
-    final static void	showFeedback(FeedbackRequest feedbackRequest) {
+    public final static void	showFeedback(FeedbackRequest feedbackRequest) {
         peer.showFeedbackWithArgs(feedbackRequest.getSubject(), feedbackRequest.getDescription());
     }
     //Directly launch Feedback Screen from anywhere within the application.
-    final static void	showFeedback() {
+    public final static void	showFeedback() {
         peer.showFeedback();
     }
     //Displays the Support landing page (Solution Article List Activity) where only solutions tagged with the given tags are displayed.
-    final static void	showSolutions(ArrayList<String> tags) {
+    public final static void	showSolutions(ArrayList<String> tags) {
         String separator = findUnusedSeparator(tags);
         StringBuilder sb = new StringBuilder();
         for (String tag : tags) {
@@ -176,11 +176,11 @@ public class Mobihelp {
     //Displays the Support landing page (Solution Article List Activity) from where users can do the following
     //View solutions,
     //Search solutions,
-    final static void	showSolutions() {
+    public final static void	showSolutions() {
         peer.showSolutions();
     }
     //Displays the Integrated Support landing page where only solutions tagged with the given tags are displayed.
-    final static void	showSupport(ArrayList<String> tags) {
+    public final static void	showSupport(ArrayList<String> tags) {
         String separator = findUnusedSeparator(tags);
         StringBuilder sb = new StringBuilder();
         for (String tag : tags) {
@@ -194,7 +194,7 @@ public class Mobihelp {
     //Search solutions,
     //  Start a new conversation,
     //View existing conversations update/ unread count etc
-    final static void	showSupport() {
+    public final static void	showSupport() {
         peer.showSupport();
     }
 
