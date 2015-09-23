@@ -42,6 +42,7 @@ public class MobihelpNativeCallback {
     public static void fireUnreadUpdatesCallback(int callbackId, final int status, final int count) {
         final UnreadUpdatesCallback cb = callbacks.get(callbackId);
         if (cb != null) {
+            callbacks.remove(callbackId);
             Display.getInstance().callSerially(new Runnable() {
 
                 public void run() {
